@@ -1,2 +1,4 @@
 # node
-node projects 
+sample project
+
+nodejs service using MONGODB

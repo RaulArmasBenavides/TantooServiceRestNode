@@ -1,7 +1,4 @@
 'use strict'
-
-
-
 var controller=  
 {
 
@@ -20,5 +17,9 @@ var controller=
     }
 
 };
+
+export const createProduct =  (req,res) =>  {
+
+}
 
 module.exports = controller;

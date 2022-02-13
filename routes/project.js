@@ -5,5 +5,6 @@ var router = express.Router();
 
 router.get('/home',ProjectController.home);
 router.post('/test',ProjectController.test);
-router.post('',ProjectController.createProduct)
+router.post('/saveProject',ProjectController.saveProject)
 
+module.exports = router;

@@ -7,7 +7,6 @@ var app = express();
 let project_routes = require('./routes/project');
 
 //middlewares 
-
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); //cualquier tipo de petición a json
 

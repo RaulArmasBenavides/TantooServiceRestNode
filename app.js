@@ -13,6 +13,6 @@ app.use(bodyParser.json()); //cualquier tipo de petición a json
 //CORS 
 
 //routes
-app.use('/api',project_routes);
+app.use('/api/usuarios/',project_routes);
 
 module.exports  = app;

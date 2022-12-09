@@ -58,6 +58,4 @@ const crearUsuario = async(req,res) =>
 }
  
 
-module.exports = {
-    crearUsuario
-}
+module.exports = controller;

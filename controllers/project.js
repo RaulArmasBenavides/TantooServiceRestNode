@@ -1,7 +1,5 @@
 'use strict';
 const Project = require('../models/project');
-const Usuario = require('../models/usuario');
-
 
 var controller=  
 {
@@ -39,23 +37,6 @@ var controller=
          });
 
      }
-   
 };
-
-const crearUsuario = async(req,res) =>
-{ 
-   const {email,password,nombre}=req.body;
-   
-   const usuario = new Usuario(req.body);
-
-  await usuario.save();
-   
-   req.json({
-       ok:true,
-      usuario
-   });
-
-}
- 
 
 module.exports = controller;

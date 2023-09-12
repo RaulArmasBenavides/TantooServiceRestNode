@@ -27,6 +27,23 @@ const getUsuarios = async(req, res) => {
 
 }
 
+
+// const crearUsuario = async(req,res) =>
+// { 
+//    const {email,password,nombre}=req.body;
+   
+//    const usuario = new Usuario(req.body);
+
+//   await usuario.save();
+   
+//    req.json({
+//        ok:true,
+//       usuario
+//    });
+
+// }
+
+
 const crearUsuario = async(req, res = response) => {
 
     const { email, password } = req.body;

@@ -44,7 +44,4 @@ router.delete( '/:id',
     [ validarJWT, varlidarADMIN_ROLE ],
     borrarUsuario
 );
-
-
-
 module.exports = router;

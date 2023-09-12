@@ -1,18 +1,18 @@
-'use strict'
-
+'use strict';
+require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var app = express();
-let project_routes = require('./routes/project');
-
+const app = express();
 //middlewares 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); //cualquier tipo de petición a json
 
 //CORS 
-
+app.use(cors({
+    origin: '*'
+}));
 //routes
-app.use('/api/usuarios/',project_routes);
-
+app.use( '/api/usuarios', require('./routes/usuarios') );
+app.use( '/api/project', require('./routes/project') );
 module.exports  = app;

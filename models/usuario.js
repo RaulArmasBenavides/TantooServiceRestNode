@@ -1,9 +1,6 @@
 'use strict';
 
 const {Schema,model} = require('mongoose');
-var mongoose = require('mongoose');
-
-
 var UsuarioSchema = Schema(
     {
         nombre : String,

@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+const cors = require('cors');
 var express = require('express');
 var bodyParser = require('body-parser');
 

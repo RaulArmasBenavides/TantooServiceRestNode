@@ -56,3 +56,10 @@ This is a sample Node.js service using MongoDB as the database, with Mongoose as
 ## License
 
 This project is licensed under the ISC License.
+
+
+
+
+npm i --save-dev @types/jsonwebtoken
+npm i --save-dev @types/express
+npm i --save-dev @types/cors

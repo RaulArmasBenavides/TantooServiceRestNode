@@ -1,6 +1,11 @@
 
 
-
+ 
+dist
+dist/files
+ormconfig.json
+web.config
+.env
 node_modules/
 LICENSE
 node_modules/*

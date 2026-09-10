@@ -6,6 +6,7 @@ import { validarCampos } from '../middlewares/validar-campos';
 import {
   getUsuarios,
   crearUsuario,
+  login,
   actualizarUsuario,
   borrarUsuario,
 } from '../controllers/usuarios.controller';
@@ -24,7 +25,7 @@ const router = Router();
 // ✅ Obtener usuarios (requiere token)
 router.get('/', validarJWT, getUsuarios);
 
-// ✅ Crear usuario
+// ✅ Crear usuario (registro)
 router.post(
   '/',
   [
@@ -34,6 +35,17 @@ router.post(
     validarCampos,
   ],
   crearUsuario,
+);
+
+// ✅ Login usuario
+router.post(
+  '/login',
+  [
+    check('email', 'El email es obligatorio').isEmail(),
+    check('password', 'El password es obligatorio').not().isEmpty(),
+    validarCampos,
+  ],
+  login,
 );
 
 // ✅ Actualizar usuario

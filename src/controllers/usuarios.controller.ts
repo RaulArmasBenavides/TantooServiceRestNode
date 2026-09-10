@@ -121,6 +121,44 @@ export const actualizarUsuario = async (req: Request, res: Response): Promise<vo
   }
 };
 
+// ✅ Login usuario
+export const login = async (req: Request, res: Response): Promise<void> => {
+  const { email, password } = req.body;
+
+  try {
+    const usuarioDB = await Usuario.findOne({ email });
+    if (!usuarioDB) {
+      res.status(400).json({
+        ok: false,
+        msg: "El correo no está registrado",
+      });
+      return;
+    }
+
+    if (!bcrypt.compareSync(password, usuarioDB.password)) {
+      res.status(400).json({
+        ok: false,
+        msg: "La contraseña es incorrecta",
+      });
+      return;
+    }
+
+    const token = await generarJWT(usuarioDB.id);
+
+    res.json({
+      ok: true,
+      usuario: usuarioDB,
+      token,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      ok: false,
+      msg: "Error inesperado... revisar logs",
+    });
+  }
+};
+
 // ✅ Borrar usuario
 export const borrarUsuario = async (req: Request, res: Response): Promise<void> => {
   const uid = req.params.id;
